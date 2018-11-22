@@ -18,6 +18,11 @@ public class Caballo {
 			posicion = new Posicion(8, 'b');
 		}
 	}
+	
+	public Caballo(Color color, char columna) {
+		
+	}
+	
 	public Color getColor() {
 		return color;
 	}
