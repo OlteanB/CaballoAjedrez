@@ -5,6 +5,37 @@ public class Posicion {
 	private char columna;
 	
 	
+	 /**
+     * Constructor por defecto
+     */
+    public Posicion() {
+        fila = 1;
+        columna = 'a';
+    }
+    
+    /**
+     * Costructor que recibe dos parametros y controla que los valores introducidos son correctos
+     * @param fila
+     * @param columna 
+     * @throws IllegalAccessException 
+     */
+    public Posicion(int fila, char columna) throws IllegalAccessException {
+        this.fila = fila;
+        this.columna = columna;
+        if (fila > 0 && fila < 9) {
+            this.fila = fila;
+        } else {
+            this.fila = 1;
+            throw new IllegalAccessException("ERROR: Fila no valida.");
+        }
+        if (columna >= 'a' && columna <= 'h') {
+            this.columna = columna;
+        } else {
+            this.columna = 'a';
+            throw new IllegalAccessException("ERROR: Columna no valida.");
+        }
+    }
+	
 	/**
      * 
      * @return fila
